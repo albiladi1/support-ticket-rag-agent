@@ -1,0 +1,10 @@
+venv/
+.env
+__pycache__/
+*.pyc
+lakehouse/
+airflow_home/
+.ivy2/
+*.log
+.cache/
+data/kaggle_raw.csv

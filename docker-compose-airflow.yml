@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  airflow:
+    image: apache/airflow:2.9.3
+    command: >
+      bash -c "pip install --no-cache-dir kafka-python jsonschema python-dotenv requests
+      && airflow standalone"
+    environment:
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./src:/opt/airflow/src
+      - ./data:/opt/airflow/data
+      - ./lakehouse:/opt/airflow/lakehouse
+      - airflow_data:/opt/airflow
+    ports:
+      - "8080:8080"
+
+volumes:
+  airflow_data:

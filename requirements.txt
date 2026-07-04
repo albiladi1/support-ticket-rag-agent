@@ -1,0 +1,25 @@
+# --- Core ---
+python-dotenv==1.0.1
+requests==2.32.3
+pydantic==2.8.2
+jsonschema==4.23.0
+
+# --- Kafka ---
+kafka-python==2.0.2
+
+# --- Delta Lakehouse (bonus PySpark path) ---
+pyspark==3.5.1
+delta-spark==3.2.0
+
+# --- RAG ---
+sentence-transformers==3.0.1
+faiss-cpu==1.8.0
+rank-bm25==0.2.2
+numpy==1.26.4
+
+# --- Data Quality / Lineage ---
+great_expectations==0.18.19
+openlineage-python==1.19.0
+
+# --- Orchestration ---
+apache-airflow==2.9.3
